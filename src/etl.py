@@ -78,7 +78,7 @@ def transform(src):
     dim_date["Quarter"] = d.quarter
     dim_date["Month"] = d.month
     dim_date["Week"] = d.isocalendar().week.astype(int)
-    dim_date["DayOfWeek"] = d.dayofweek + 1  # 1 = 星期一 … 7 = 星期日
+    dim_date["DayOfWeek"] = d.day_of_week + 1  # 1 = 星期一 … 7 = 星期日
     dim_date["FullDate"] = d.date
 
     # 4. 事實表：明細 → 補上訂單資訊 → 換成各維度的代理鍵 → 計算金額
